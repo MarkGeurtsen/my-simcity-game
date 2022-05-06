@@ -1,0 +1,23 @@
+canvas {
+    width: 1920;
+    height: 1080;
+}
+
+#building-selection {
+    position: absolute;
+    top: 50px;
+    left: 1200px;
+}
+
+div.building {
+    width: 96px;
+    height: 96px;
+}
+
+div#house {
+    background-image: url("img/house_tile.png");
+}
+
+div#factory {
+    background-image: url("img/factory_tile.png");
+}
