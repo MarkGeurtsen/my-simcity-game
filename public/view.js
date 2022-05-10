@@ -17,4 +17,8 @@ function drawBackground() {
     if(draggable.selectedBuilding) {
         draggable.draw();
     }
+    //console.log(buildings);
+    Object.values(buildings)
+        .filter(building => building !== 0)
+        .forEach(building => building.draw())
 })();

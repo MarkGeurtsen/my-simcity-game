@@ -1,9 +1,10 @@
 // Setup the draggable building object.
 
-const draggable = new Draggable({position : { x: -200, y: -200}, image: images[TILE_TYPES.HOUSE]});
+const draggable = new Draggable({position : { x: -200, y: -200}, building_type: "FACTORY", opacity: 0.5});
 
 // Initiate empty array for map.
 const tiles = [];
+const buildings = tiles.map( _ => 0);
 
 // Loop over map object and set tiles.
 (function drawMap() {
@@ -20,3 +21,14 @@ const tiles = [];
         })
     })
 })();
+
+const addBuilding = (building) => {
+    let tileIndex = getTileIndexByCoordinates({x : building.position.x, y: building.position.y});
+    buildings[tileIndex] = building;
+}
+
+let selectedTileIndex = -1;
+let mouseOverTileIndex = -1;
+
+let isMouseDown = false;
+let isDraggingBuilding = false;
